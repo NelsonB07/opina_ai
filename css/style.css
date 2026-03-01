@@ -2,3 +2,10 @@
 body {
     background-color: #CCC;
 }
+
+/* Logo menor no navbar */
+#logo {
+    width: 150px;
+    height: auto;
+    display: inline-block;
+}
