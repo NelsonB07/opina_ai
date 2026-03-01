@@ -25,7 +25,7 @@
         <nav id="main-navbar" class="navbar navbar-expand-lg">
             <a href="<?= $BASE_URL ?>" class="navbar-brand">
                 <img src="<?= $BASE_URL ?>img/logo_opina_ai.png" alt="Opina Aí" id="logo">
-                <span id="opina-title">OpinaAí </span>
+                <span id="opina-title">OpinaAí</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
