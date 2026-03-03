@@ -13,7 +13,7 @@
     <title>Opina Aí</title>
     <link rel="short icon" href="<?= $BASE_URL ?>img/logo_opina_ai.png" type="image/x-icon">
     <!-- CSS DO PROJETO -->
-    <link rel="stylesheet" href="<?= $BASE_URL ?>css./style.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
     <!-- FONT AWESOME -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- BOOTSTRAP -->
@@ -22,29 +22,48 @@
 </head>
 <body>
     <header>
-        <nav id="main-navbar" class="navbar navbar-expand-lg">
-            <a href="<?= $BASE_URL ?>" class="navbar-brand">
-                <img src="<?= $BASE_URL ?>img/logo_opina_ai.png" alt="Opina Aí" id="logo">
+    <nav id="main-navbar" class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="<?= $BASE_URL ?>" class="navbar-brand d-flex align-items-center">
+                <img src="<?= $BASE_URL ?>img/logo_opina_ai.png" 
+                     alt="Opina Aí" 
+                     id="logo" 
+                     class="me-2">
                 <span id="opina-title">Opina Aí</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbar" 
+                    aria-controls="navbar" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <form action="" method="GET" id="search-form" class="form-inline my-2 my-lg-0">
-                <input type="text" name="q" id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar Filmes" aria-label="Search">
-                <button class="btn my-2 my-sm-0" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-            <div class="collapse navbar-collapse" id="navbar">
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbar">
+                <form action="" method="GET" class="d-flex mx-auto">
+                    <input type="search" 
+                           name="q" 
+                           id="search" 
+                           class="form-control me-2" 
+                           placeholder="Buscar Filmes">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="<?= $BASE_URL ?>auth.php" class="nav-link">Entrar / Cadastrar</a>
+                        <a href="<?= $BASE_URL ?>auth.php" class="nav-link" style ="color: white">
+                            Entrar / Cadastrar
+                        </a>
                     </li>
                 </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
     <div id="main-container" class="container-fluid">
         <h1>Corpo do site</h1>
     </div>
