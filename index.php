@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opina Aí</title>
-    <link rel="short icon" href="<?= $BASE_URL ?>img/logo_opina_ai.png" type="image/x-icon">
+    <link rel="short icon" href="<?= $BASE_URL ?>img/logo_opina_.png" type="image/x-icon">
     <!-- CSS DO PROJETO -->
     <link rel="stylesheet" href="<?= $BASE_URL ?>css/style.css">
     <!-- FONT AWESOME -->
@@ -25,7 +25,7 @@
     <nav id="main-navbar" class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a href="<?= $BASE_URL ?>" class="navbar-brand d-flex align-items-center">
-                <img src="<?= $BASE_URL ?>img/logo_opina_ai.png" 
+                <img src="<?= $BASE_URL ?>img/logo_opina_2.png" 
                      alt="Opina Aí" 
                      id="logo" 
                      class="me-2">
@@ -46,7 +46,7 @@
                 <form action="" method="GET" class="d-flex mx-auto">
                     <input type="search" 
                            name="q" 
-                           id="search" 
+                           id="search-form" 
                            class="form-control me-2" 
                            placeholder="Buscar Filmes">
                     <button class="btn btn-outline-light" type="submit">
@@ -55,7 +55,7 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="<?= $BASE_URL ?>auth.php" class="nav-link" style ="color: white">
+                        <a href="<?= $BASE_URL ?>auth.php" class="nav-link" id="entrar">
                             Entrar / Cadastrar
                         </a>
                     </li>
@@ -68,7 +68,7 @@
         <h1>Corpo do site</h1>
     </div>
     <footer id="footer">
-        <div class="social-container">
+        <div id="social-container">
             <ul>
                 <li>
                     <a href="#" class="fab fa-facebook"></a>
