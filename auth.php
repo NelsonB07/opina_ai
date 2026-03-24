@@ -21,7 +21,7 @@ require_once("templates/header.php");
             </div>
             <div class="col-md-4" id="register-container">
                 <h2>Criar Conta</h2>
-                <form action="" method="POST">
+                <form action="<?= $BASE_URL ?>auth_process.php" method="POST">
                     <input type="hidden" name="type" value="register">
                     <div class="form-group">
                         <label for="email">Email:</label>
@@ -34,6 +34,10 @@ require_once("templates/header.php");
                     <div class="form-group">
                         <label for="lastname">Sobrenome:</label>
                         <input type="text" class="form-control" placeholder="Digite seu sobrenome" name="lastname" id="lastname">
+                    </div>
+                      <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" placeholder="Digite sua senha" name="password" id="password">
                     </div>
                     <div class="form-group">
                         <label for="confirmpassword">Confirmação de senha</label>

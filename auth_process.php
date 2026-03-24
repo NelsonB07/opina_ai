@@ -1,0 +1,34 @@
+<?php 
+
+require_once("globals.php");
+require_once("db.php");
+require_once("models/User.php");
+require_once("models/Message.php");
+require_once("dao/UserDAO.php");
+
+$message = new Message($BASE_URL);
+
+    // Resgata o tiupo do formulário
+    $type = filter_input(INPUT_POST, "type");
+
+    // Verificação do tipo de fomulário 
+    if ($type === "register") {
+
+    $name = filter_input(INPUT_POST, "name");
+    $lastname = filter_input(INPUT_POST, "lastname");
+    $email = filter_input(INPUT_POST, "email");
+    $password = filter_input(INPUT_POST, "password");
+    $confirmpasword = filter_input(INPUT_POST, "confirmpassword");
+
+    // Verificação de dados minímos
+    if ($name && $lastname && $email && $password ) {
+
+    } else {
+        // Enviar uma msg de erro, de dados faltantes
+        $message->setMessage("Por favor, preencha todos os campos.", "error", "back");
+    }
+
+    } else if ($type === "login") {
+
+    }
+?>
