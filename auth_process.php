@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once("globals.php");
 require_once("db.php");
@@ -7,12 +7,13 @@ require_once("models/Message.php");
 require_once("dao/UserDAO.php");
 
 $message = new Message($BASE_URL);
+$userDao = new UserDAO($conn, $BASE_URL);
 
-    // Resgata o tiupo do formulário
-    $type = filter_input(INPUT_POST, "type");
+// Resgata o tiupo do formulário
+$type = filter_input(INPUT_POST, "type");
 
-    // Verificação do tipo de fomulário 
-    if ($type === "register") {
+// Verificação do tipo de fomulário 
+if ($type === "register") {
 
     $name = filter_input(INPUT_POST, "name");
     $lastname = filter_input(INPUT_POST, "lastname");
@@ -21,14 +22,27 @@ $message = new Message($BASE_URL);
     $confirmpasword = filter_input(INPUT_POST, "confirmpassword");
 
     // Verificação de dados minímos
-    if ($name && $lastname && $email && $password && $confirmpasword) {
+        if ($name && $lastname && $email && $password && $confirmpasword) {
 
-    } else {
-        // Enviar uma msg de erro, de dados faltantes
-        $message->setMessage("Por favor, preencha todos os campos.", "error", "back");
-    }
+            // Verificar se as senhas batem
+            if ($password === $confirmpasword) {
 
+                if($userDao->findByEmail($email) === false) {
+
+                    echo "Nenhum usuário foi encontrado.";
+
+                } else {
+                    // Enviar uma msg de erro, usuário já existe 
+                    $message->setMessage("Usuário já cadastrado tente outro e-email.", "error", "back");
+                }
+                
+            } else {
+                // Enviar uma msg de erro, de senhas não batem
+                $message->setMessage("As senhas não são iguais.", "error", "back");
+            }
+        } else {
+            // Enviar uma msg de erro, de dados faltantes
+            $message->setMessage("Por favor, preencha todos os campos.", "error", "back");
+        }
     } else if ($type === "login") {
-
-    }
-?>
+}
