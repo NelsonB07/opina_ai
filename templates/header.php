@@ -2,8 +2,16 @@
 
     require_once("globals.php"); 
     require_once("db.php"); 
+    require_once("models/Message.php"); 
 
-    $flassMessage = [];
+    $message = new Message($BASE_URL);
+
+    $flassMessage = $message->getMessage();
+
+    if(!empty($flassMessage["msg"])) {
+        //Limpar mensagem
+        $message->clearMessage();
+    }
 
 ?>
 
@@ -41,7 +49,7 @@
                     aria-controls="navbar" 
                     aria-expanded="false" 
                     aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" style="color: #FFF"></i>
             </button>
 
             <div class="collapse navbar-collapse justify-content-between" id="navbar">

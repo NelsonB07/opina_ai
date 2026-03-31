@@ -21,7 +21,7 @@ $message = new Message($BASE_URL);
     $confirmpasword = filter_input(INPUT_POST, "confirmpassword");
 
     // Verificação de dados minímos
-    if ($name && $lastname && $email && $password ) {
+    if ($name && $lastname && $email && $password && $confirmpasword) {
 
     } else {
         // Enviar uma msg de erro, de dados faltantes
