@@ -20,7 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opina Aí</title>
+    <title>Opina Movies</title>
     <link rel="short icon" href="<?= $BASE_URL ?>img/logo_opina_.png" type="image/x-icon">
     <!-- BOOTSTRAP -->
      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                      alt="Opina Aí" 
                      id="logo" 
                      class="me-2">
-                <span id="opina-title">Opina Aí</span>
+                <span id="opina-title">Opina Movies</span>
             </a>
 
             <button class="navbar-toggler" 
