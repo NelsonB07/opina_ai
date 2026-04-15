@@ -31,6 +31,25 @@
 
         public function create(User $user, $authUser = false) {
 
+            $stmt = $this->conn->prepare("INSERT INTO users
+             (name, lastname, email, password, token)
+            VALUES 
+              (:name, :lastname, :email, :password, :token)");
+
+            $stmt->bindParam(":name", $user->name);
+            $stmt->bindParam(":lastname", $user->lastname);
+            $stmt->bindParam(":email", $user->email);
+            $stmt->bindParam(":password", $user->password);
+            $stmt->bindParam(":token", $user->token);
+
+            $stmt->execute();
+
+            // Autenticar usuário, caso auth seja true 
+
+            if($authUser) {
+                $this->setTokenToSession($user->token);
+            }
+
         }
         public function update(User $user) {
 
